@@ -3,7 +3,7 @@ package xyz.sergevas.rbfmiot.gateway;
 import org.apache.camel.builder.RouteBuilder;
 
 public class FieldGatewayRoutes extends RouteBuilder {
-
+	
     public void configure() {
 
         from("file:src/data?noop=true")

@@ -1,17 +1,15 @@
 package xyz.sergevas.rbfmiot.gateway;
 
 import org.apache.camel.main.Main;
+import static xyz.sergevas.rbfmiot.gateway.IConstants.LOG;
+import org.apache.camel.component.properties.PropertiesComponent;
 
-/**
- * A Camel Application
- */
 public class FieldGatewayMain {
 
-    /**
-     * A main() so we can easily run these routing rules in our IDE
-     */
     public static void main(String... args) throws Exception {
+    	LOG.info("Field Gateway initialisation start...");
         Main main = new Main();
+        main.bind("properties", new PropertiesComponent("classpath:field-gateway.properties"));
         main.addRouteBuilder(new FieldGatewayRoutes());
         main.run(args);
     }
