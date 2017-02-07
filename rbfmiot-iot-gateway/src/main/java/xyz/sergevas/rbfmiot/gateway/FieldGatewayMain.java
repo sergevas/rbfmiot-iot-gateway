@@ -1,4 +1,4 @@
-package xyz.sergevas.rbfmiot;
+package xyz.sergevas.rbfmiot.gateway;
 
 import org.apache.camel.main.Main;
 
