@@ -2,6 +2,8 @@ package xyz.sergevas.rbfmiot.gateway;
 
 import org.apache.camel.builder.RouteBuilder;
 
+import static xyz.sergevas.rbfmiot.gateway.IConstants.LOG;
+
 public class FieldGatewayRoutes extends RouteBuilder {
 	
     public void configure() {
