@@ -31,7 +31,7 @@
 		<jdk.version>1.8</jdk.version>
 		<!-- <wagon-maven-plugin.version>1.0</wagon-maven-plugin.version> <wagon-ssh.version>2.10</wagon-ssh.version> 
 			<velocity-maven-plugin.version>1.1.0</velocity-maven-plugin.version> <fabric8-camel-maven-plugin.version>2.2.126</fabric8-camel-maven-plugin.version> -->
-		<mainClass.name>xyz.sergevas.rbfmiot.FieldGatewayMain</mainClass.name>
+		<mainClass.name>xyz.sergevas.rbfmiot.gateway.FieldGatewayMain</mainClass.name>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
@@ -152,6 +152,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-shade-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
