@@ -5,7 +5,28 @@ import org.apache.logging.log4j.Logger;
 
 public interface IConstants {
 	
-	public static final Logger LOG = LogManager.getLogger("xyz.sergevas.rbfmiot");
+	public static final String LOG_NAME = "xyz.sergevas.rbfmiot";
+	public static final Logger LOG = LogManager.getLogger(LOG_NAME);
+	
+	public static final String EMPTY_STR = "";
+	public static final String DELIMETER = "/";
+	public static final int LENGTH_OF_DEVICE_ID_PREFIX = 4; // Length of 'env/'
+	
+	// Camel Beans
+    public static final String HONO_MESSAGE_HANDLER = "honoMessageHandler";
+    public static final String TRANSFORM_UTILS = "transformUtils";
+    
+    // Field Gateway
+    public static final String FIELD_GATEWAY_STATUS_ON = "on";
+	public static final String FIELD_GATEWAY_STATUS_OFF = "off";
+	public static final String FIELD_GATEWAY_STATUS_SLEEPING = "sleeping";
+	
+	// Device
+	public static final String DEVICE_TOPIC_PART_ENV = "env";
+	public static final String DEVICE_TOPIC_PART_STATUS = "status";
+	public static final String DEVICE_TOPIC_PART_PRESSURE = "pressure";
+	public static final String DEVICE_TOPIC_PART_HUMIDITY = "humidity";
+	public static final String DEVICE_TOPIC_PART_TEMPERATURE = "temperature";
 	
 	// MQTT
 	public static final String MQTT_SERVICE_HOST = "MQTT_SERVICE_HOST";
@@ -44,7 +65,6 @@ public interface IConstants {
     public static final String PUBLISH_TOPIC_NAME_PROP_NAME = "publishTopicName";
     public static final String BY_DEFAULT_RETAIN_PROP_NAME = "byDefaultRetain";
 	public static final String MQTT_RETAIN_PROPERTY_NAME_PROP_NAME = "mqttRetainPropertyName";
-	public static final String CAMEL_MQTT_PUBLISH_TOPIC_PROP_NAME = "CamelMQTTPublishTopic";
 	public static final String MQTT_QOS_PROP_NAME = "mqttQosPropertyName";
 	public static final String CONNECT_WAIT_IN_SECONDS_PROP_NAME = "connectWaitInSeconds";
 	public static final String DISCONNECT_WAIT_IN_SECONDS_PROP_NAME = "disconnectWaitInSeconds";
@@ -57,9 +77,34 @@ public interface IConstants {
 	public static final String WILL_QOS_PROP_NAME = "willQos";
 	public static final String WILL_RETAIN_PROP_NAME = "willRetain";
 	
-	public static final String FIELD_GATEWAY_INIT_ENDPOINT = "field_gw_init";
-	public static final String FIELD_GATEWAY_INIT_PRODUCER_ENDPOINT = "field_gw_init_producer";
-	public static final String FIELD_GATEWAY_TELEMETRY_SUBSCRIBER_ENDPOINT = "field_gw_telemetry_subscriber";
+	public static final String CAMEL_MQTT_PUBLISH_TOPIC_HEADER_NAME = "CamelMQTTPublishTopic";
+	public static final String CAMEL_MQTT_SUBSCRIBE_TOPIC_HEADER_NAME = "CamelMQTTSubscribeTopic";
 	
-	public static final String FIELD_GATEWAY_STATUS_ON = "on";
+	public static final String DIRECT_FIELD_GATEWAY_INIT_RECEIVE_ENDPOINT = "directFieldGwInitReceive";
+	public static final String MQTT_FIELD_GATEWAY_INIT_SEND_ENDPOINT = "mqttFieldGwInitSend";
+	public static final String MQTT_FIELD_GATEWAY_TELEMETRY_RECIEVE_ENDPOINT = "mqttFieldGwTelemetryReceive";
+	public static final String DIRECT_FIELD_GATEWAY_TELEMETRY_SEND_ENDPOINT = "directFieldGwTelemetrySend";
+	public static final String DIRECT_FIELD_GATEWAY_DEVICE_REGISTER_SEND_ENDPOINT = "directFieldGwDeviceRegisterSend";
+	public static final String DIRECT_FIELD_GATEWAY_COMMAND_REQUEST_RECEIVE_ENDPOINT = "directFieldGwCommandRequestReceive";
+	public static final String MQTT_FIELD_GATEWAY_COMMAND_REQUEST_SEND_ENDPOINT = "mqttFieldGwCommandRequestSend";
+	public static final String MQTT_FIELD_GATEWAY_COMMAND_REPLY_RECEIVE_ENDPOINT = "mqttFieldGwCommandReplyReceive";
+	
+	// Hono
+	public static final String CONTENT_TYPE_VALUE = "application/json; charset=utf-8";
+	
+	// Registration actions
+    public static final String ACTION_REGISTER   = "register";
+    public static final String ACTION_FIND       = "find";
+    public static final String ACTION_GET        = "get";
+    public static final String ACTION_DEREGISTER = "deregister";
+    public static final String ACTION_UPDATE     = "update";
+
+    // Message fields
+    public static final String APP_PROPERTY_CORRELATION_ID       = "correlation-id";
+    public static final String APP_PROPERTY_ACTION               = "action";
+    public static final String APP_PROPERTY_KEY                  = "key";
+    public static final String APP_PROPERTY_STATUS               = "status";
+    public static final String FIELD_PAYLOAD                     = "payload";
+
+    public static final String REGISTRATION_ENDPOINT             = "registration";
 }
